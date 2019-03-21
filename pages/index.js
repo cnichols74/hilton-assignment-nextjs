@@ -1,71 +1,11 @@
 import React, { Component } from 'react'
 import Button from '../components/common/button'
 import Rooms from '../components/rooms'
+import data from '../data/data'
 
 class Index extends Component {
   state = {
-    rooms: [
-      {
-        id: 1,
-        children: [
-          { value: '0', displayValue: '0' },
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        adults: [
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        selectedChildren: 0,
-        selectedAdults: 0,
-        isSelected: false
-      },
-      {
-        id: 2,
-        children: [
-          { value: '0', displayValue: '0' },
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        adults: [
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        selectedChildren: 0,
-        selectedAdults: 0,
-        isSelected: false
-      },
-      {
-        id: 3,
-        children: [
-          { value: '0', displayValue: '0' },
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        adults: [
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        selectedChildren: 0,
-        selectedAdults: 0,
-        isSelected: false
-      },
-      {
-        id: 4,
-        children: [
-          { value: '0', displayValue: '0' },
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        adults: [
-          { value: '1', displayValue: '1' },
-          { value: '2', displayValue: '2' }
-        ],
-        selectedChildren: 0,
-        selectedAdults: 0,
-        isSelected: false
-      },
-    ]
+    rooms: data.rooms
   }
   hydrateStateWithLocalStorage = () => {
     // for all items in state
