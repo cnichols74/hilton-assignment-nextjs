@@ -3,15 +3,15 @@ import Form from './common/form'
 
 class Room extends Form {
   render () {
-    //console.log('props', this.props)
-    const { adults, children, isSelected, roomNumber, click, room} = this.props
+    const { adults, children, selectedAdults, selectedChildren, isSelected, roomNumber, click, room, onChange } = this.props
     return (
       <div className="room-form-container">
         <p className="room-form-title"><label>{roomNumber !== 1 ?
-          <input type="checkbox" onChange={()=>click(room)} checked={isSelected}/> : null} Room</label> {roomNumber}</p>
+          <input type="checkbox" onChange={() => click(room)} checked={isSelected}/> : null} Room</label> {roomNumber}
+        </p>
         <form className="room-form"
               style={roomNumber === 1 || isSelected === true ? { backgroundColor: '#fff' } : null}>
-          <fieldset disabled={!isSelected}>
+          <fieldset disabled={roomNumber !== 1 && !isSelected}>
             <span>Adults</span>
             <span>Children</span>
             <div>
@@ -20,8 +20,8 @@ class Room extends Form {
             </div>
 
             <div>
-              {this.renderSelect(children)}
-              {this.renderSelect(adults)}
+              {this.renderSelect(adults, 'Adults', selectedAdults, onChange, room)}
+              {this.renderSelect(children, 'Children', selectedChildren, onChange, room)}
             </div>
           </fieldset>
         </form>

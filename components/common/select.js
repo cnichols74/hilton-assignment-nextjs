@@ -1,12 +1,10 @@
 import React from 'react';
-const Select = ({ value, onChange, options }) => {
- /* console.log('options are :', options)
-  console.log('value are :', value)
-  console.log('onChange are :', options)*/
+const Select = ({ value, name, onChange, options}, room) => {
   return (
     <select
+      name={name}
       value={value}
-      onChange={e => onChange(e.currentTarget.value)}>
+      onChange={e => onChange(e.currentTarget.value, room)}>
       {options.map(option => (
         <option key={option.value} value={option.value}>
           {option.displayValue}

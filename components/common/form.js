@@ -2,20 +2,12 @@ import React, { Component } from 'react'
 import Select from './select'
 
 class Form extends Component {
-  handleBtnClick = e => {
-    e.preventDefault()
-    //this.doSubmit()
-  }
-  handleChange = ({ currentTarget: select }) => {
-    console.log(select)
-  }
-
-  renderSelect (data) {
-    //console.log(data)
+  renderSelect (data, name, selectValue, onChange, room) {
     return (
       <Select
-        value={data['value']}
-        onChange={this.handleChange}
+        value={selectValue}
+        name={name}
+        onChange={()=>onChange(event, room)}
         options={data}
       >
       </Select>

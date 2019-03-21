@@ -1,8 +1,7 @@
 import React from 'react';
 const Button = ({ label, onClick }) => {
   return (
-    <button onClick={e => onClick(e.currentTarget.value)}
-            className="btn btn-primary mr-1">
+    <button onClick={e => onClick(e.currentTarget.value)}>
       {label}
       <style jsx>{`
           button {
