@@ -36,7 +36,7 @@ const Room = (props) => {
               room={room}
               options={children}
               value={selectedChildren}
-              changed={onChange}/>
+              changed={()=>onChange(event,room)}/>
           </div>
         </fieldset>
       </form>
