@@ -33,7 +33,6 @@ const Room = (props) => {
             <Element
               elementType="select"
               name="Children"
-              room={room}
               options={children}
               value={selectedChildren}
               changed={()=>onChange(event,room)}/>
