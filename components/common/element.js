@@ -31,7 +31,7 @@ const Element = ({ elementType, type, value, changed, name, options, checked, ro
         <select
           name={name}
           value={value}
-          onChange={e =>changed(e.currentTarget.value, room)}>
+          onChange={changed}>
           {options.map(option => (
             <option key={option.value} value={option.value}>
               {option.displayValue}
