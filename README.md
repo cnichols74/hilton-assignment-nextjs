@@ -1,7 +1,7 @@
 Hilton UI Assessment
 Assessment 2:
 --------------
-Expected final output:
+Expected final output: DEMO => https://hilton-assignment-nextjs-8po4nbyk6.now.sh/
 This could be a codesandbox/codepen/etc link OR a downloadable app that could run locally (include instructions either way). Either would be expected to make use of React, styled-components, some type of state management. Use 'NextJS' as a base and include tests, as no component is complete without them.
 
 The point of this is to show awareness towards:
