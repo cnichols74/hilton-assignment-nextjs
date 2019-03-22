@@ -1,42 +1,47 @@
 import React from 'react'
-import Form from './common/form'
+import Element from './common/element'
 
-class Room extends Form {
-  render () {
-    const { adults, children, selectedAdults, selectedChildren, isSelected, roomNumber, click, room, onChange } = this.props
-    return (
-      <div className="room-form-container">
-        <p className="room-form-title"><label>{roomNumber !== 1 ?
-          <input type="checkbox" onChange={() => click(room)} checked={isSelected}/> : null} Room</label> {roomNumber}
-        </p>
-        <form className="room-form"
-              style={roomNumber === 1 || isSelected === true ? { backgroundColor: '#fff' } : null}>
-          <fieldset disabled={roomNumber !== 1 && !isSelected}>
-            <span>Adults</span>
-            <span>Children</span>
-            <div>
-              <span>(18+)</span>
-              <span>(0-17)</span>
-            </div>
+const Room = (props) => {
+  const { adults, children, selectedAdults, selectedChildren, isSelected, roomNumber, click, room, onChange } = props
+  return (
+    <div className="room-form-container">
+      <p className="room-form-title"><label>{roomNumber !== 1 ?
+        <Element
+          elementType="input"
+          type="checkbox"
+          checked={isSelected}
+          changed={() => click(room)}/>
+        : null} Room</label> {roomNumber}
+      </p>
+      <form className="room-form"
+            style={roomNumber === 1 || isSelected === true ? { backgroundColor: '#fff' } : null}>
+        <fieldset disabled={roomNumber !== 1 && !isSelected}>
+          <span>Adults</span>
+          <span>Children</span>
+          <div>
+            <span>(18+)</span>
+            <span>(0-17)</span>
+          </div>
 
-            <div>
-              {this.renderSelect(adults, 'Adults', selectedAdults, onChange, room)}
-              {this.renderSelect(children, 'Children', selectedChildren, onChange, room)}
-            </div>
-          </fieldset>
-        </form>
+          <div>
+            <Element
+              elementType="select"
+              name="Adults"
+              options={adults}
+              value={selectedAdults}
+              changed={()=>onChange(event,room)}/>
+            <Element
+              elementType="select"
+              name="Children"
+              room={room}
+              options={children}
+              value={selectedChildren}
+              changed={onChange}/>
+          </div>
+        </fieldset>
+      </form>
 
-        <style jsx>{`
-        input[type='checkbox'] {
-          /* Double-sized Checkboxes */
-          -ms-transform: scale(1.5); /* IE */
-          -moz-transform: scale(1.5); /* FF */
-          -webkit-transform: scale(1.5); /* Safari and Chrome */
-          -o-transform: scale(1.5); /* Opera */
-           position:relative;
-           top:-2px;
-           padding: 10px;
-         }
+      <style jsx>{`
           .room-form-title {
               position: relative;
               font-size: 18px;
@@ -66,10 +71,9 @@ class Room extends Form {
           }
 
         `}</style>
-      </div>
+    </div>
 
-    )
-  }
+  )
 }
 
 export default Room
