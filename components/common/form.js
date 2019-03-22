@@ -7,7 +7,7 @@ class Form extends Component {
       <Select
         value={selectValue}
         name={name}
-        onChange={()=>onChange(event, room)}
+        onChange={() => onChange(event, room)}
         options={data}
       >
       </Select>
