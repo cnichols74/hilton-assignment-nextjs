@@ -8,14 +8,18 @@ const Room = (props) => {
       <p className="room-form-title"><label>{roomNumber !== 1 ?
         <Element
           elementType="input"
+          data-test="checkbox-room"
           type="checkbox"
           checked={isSelected}
           changed={() => click(room)}/>
         : null} Room</label> {roomNumber}
       </p>
       <form className="room-form"
+            data-test="form-room"
             style={roomNumber === 1 || isSelected === true ? { backgroundColor: '#fff' } : null}>
-        <fieldset disabled={roomNumber !== 1 && !isSelected}>
+        <fieldset
+          data-test="fieldset-room"
+          disabled={roomNumber !== 1 && !isSelected}>
           <span>Adults</span>
           <span>Children</span>
           <div>
@@ -26,12 +30,14 @@ const Room = (props) => {
           <div>
             <Element
               elementType="select"
+              data-test="select-room-adults"
               name="Adults"
               options={adults}
               value={selectedAdults}
               changed={()=>onChange(event,room)}/>
             <Element
               elementType="select"
+              data-test="select-room-children"
               name="Children"
               options={children}
               value={selectedChildren}

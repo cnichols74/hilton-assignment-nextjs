@@ -78,7 +78,7 @@ class Index extends Component {
       <React.Fragment>
         <main role="main">
           <div className="flex-container">
-            <Rooms
+            <Rooms data-test="component-rooms"
               rooms={this.state.rooms}
               click={this.handleCheckboxClick}
               change={this.handleChange}
@@ -86,7 +86,7 @@ class Index extends Component {
           </div>
         </main>
 
-        <Button label="Submit" onClick={this.handleSubmit}/>
+        <Button label="Submit" data-test="submit-button" onClick={this.handleSubmit}/>
         <style jsx>{`
          .flex-container {
             display: flex;
