@@ -11,6 +11,7 @@ const Rooms = (props) => {
           <p>No Rooms Available</p>
         ) : (
           rooms.map(room => <Room key={room.id}
+                                  data-test="component-room"
                                   click={click}
                                   onChange={change}
                                   roomNumber={room.id}

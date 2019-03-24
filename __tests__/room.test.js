@@ -1,7 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Room from '../components/room'
-import data from '../data/data'
 import { findByTestAttr } from '../utils/testUtils'
 
 describe('<Room/>', () => {
@@ -9,6 +8,7 @@ describe('<Room/>', () => {
   beforeEach(() => {
     wrapper = shallow(<Room/>)
   })
+
   it('should render a checkbox', () => {
     const checkbox = findByTestAttr(wrapper, 'checkbox-room')
     expect(checkbox).toHaveLength(1)
